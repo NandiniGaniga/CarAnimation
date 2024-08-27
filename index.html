@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>move car</title>
+    <link rel="stylesheet" href="./mystyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>navigate the car using button</h1>
+        <input type="button" value="start" id="start" onclick="start()"/>
+        
+        <input type="button" value="stop" id="stop" onclick="stop()"/>
+        
+        <input type="button" value="reverse" id="reverse" onclick="reverse()"/>
+        <img src="./images/car (1).png" alt="car image" id="mycar"/>
+    </div>
+
+    <script>
+        let carelement=document.getElementById("mycar");
+        let animate;
+        function init(){
+            carelement.style.left="0px";
+
+        }
+        window.onload=init;
+
+        function start(){
+            carelement.style.left=parseInt(carelement.style.left)+50+"px";
+            animate=setTimeout(start,50);
+        }
+        function stop(){
+            clearTimeout(animate);
+        }
+
+        function reverse(){
+            carelement.style.left=parseInt(carelement.style.left)-10+"px";
+            animate=setTimeout(reverse,50);
+        }
+
+        
+    </script>
+    
+</body>
+</html> 
